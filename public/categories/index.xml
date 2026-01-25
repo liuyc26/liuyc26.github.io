@@ -33,10 +33,10 @@
       <description></description>
     </item>
     <item>
-      <title>Hacking</title>
-      <link>http://localhost:1313/categories/hacking/</link>
+      <title>Web Security</title>
+      <link>http://localhost:1313/categories/web-security/</link>
       <pubDate>Sun, 01 Jun 2025 12:26:43 -0400</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost:1313/categories/hacking/</guid>
+      <guid>http://localhost:1313/categories/web-security/</guid>
       <description></description>
     </item>
   </channel>

@@ -3,7 +3,7 @@ title = 'First Duplicate Report'
 date = 2025-03-20T00:09:38-04:00
 draft = false
 toc = false
-categories = ['hacking']
+categories = ['web security']
 tags = ['information disclosure']
 series = ['']
 +++

@@ -46,11 +46,7 @@ Create a Simple Web App with CORS Misconfiguration Essentially, we require a web
 
 
 
-<script 
-    data-goatcounter="https://liuyc26.goatcounter.com/count"
-    async 
-    src="//gc.zgo.at/count.js">
-</script>
+
   
   
 
@@ -183,9 +179,9 @@ Create a Simple Web App with CORS Misconfiguration Essentially, we require a web
     
       
       <li>
-        <a href="/categories/hacking/"
+        <a href="/categories/web-security/"
           class="text-sm mr-2 px-2 py-1 rounded border border-emerald-800 bg-emerald-800 text-slate-50">
-          Hacking
+          Web Security
         </a>
       </li>
       
@@ -268,10 +264,10 @@ Create a Simple Web App with CORS Misconfiguration Essentially, we require a web
 </blockquote>
 <p>Because we have a session check, you can&rsquo;t access the sensitive data without login.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">cookie</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nf">Cookie</span><span class="p">(</span><span class="s">&#34;session&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">cookie</span><span class="p">.</span><span class="nx">Value</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&#34;valid-session&#34;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">cookie</span><span class="p">.</span><span class="nx">Value</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&#34;valid-session&#34;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">http</span><span class="p">.</span><span class="nf">Error</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Unauthorized&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusUnauthorized</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><p><div class="not-prose">
 <figure>
     <img src="/cors/cors-1.png"
@@ -298,10 +294,10 @@ Create a Simple Web App with CORS Misconfiguration Essentially, we require a web
 </p>
 <p>Now we misconfigure the CORS.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">origin</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="s">&#34;Origin&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="k">if</span><span class="w"> </span><span class="nx">origin</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">if</span><span class="w"> </span><span class="nx">origin</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">w</span><span class="p">.</span><span class="nf">Header</span><span class="p">().</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Access-Control-Allow-Origin&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">origin</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">w</span><span class="p">.</span><span class="nf">Header</span><span class="p">().</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Access-Control-Allow-Credentials&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;true&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><p>This will allow all the origin to access it.</p>
 <h3 id="attack-it">Attack it</h3>
 <p>First, we make sure this vulnerability exists. Of course, we test with our own session, and bear with me, I&rsquo;m too lazy to create another profile. Let&rsquo;s just imagine this sensitive data is not the victim&rsquo;s data.</p>
@@ -320,7 +316,7 @@ Create a Simple Web App with CORS Misconfiguration Essentially, we require a web
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">            <span class="c1">// when fetching a url, the browser automatically sets the Origin header.
-</span></span></span><span class="line"><span class="cl">            <span class="nx">fetch</span><span class="p">(</span><span class="s2">&#34;http://localhost:8080/api/data&#34;</span><span class="p">,</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">fetch</span><span class="p">(</span><span class="s2">&#34;http://localhost:8080/api/data&#34;</span><span class="p">,</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                <span class="nx">credentials</span><span class="o">:</span> <span class="s2">&#34;include&#34;</span>
 </span></span><span class="line"><span class="cl">            <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
@@ -370,13 +366,13 @@ Create a Simple Web App with CORS Misconfiguration Essentially, we require a web
 <h3 id="make-it-safe">Make it Safe</h3>
 <p>Because it’s a configuration problem, the solution is fairly easy. We set up an allowed origin list, then other domains won&rsquo;t be able to fetch data.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">origin</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="s">&#34;Origin&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="nx">allowedOrigins</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">bool</span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">allowedOrigins</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">bool</span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s">&#34;https://liuyuchen.dev&#34;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="k">if</span><span class="w"> </span><span class="nx">allowedOrigins</span><span class="p">[</span><span class="nx">origin</span><span class="p">]</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">if</span><span class="w"> </span><span class="nx">allowedOrigins</span><span class="p">[</span><span class="nx">origin</span><span class="p">]</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">w</span><span class="p">.</span><span class="nf">Header</span><span class="p">().</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Access-Control-Allow-Origin&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">origin</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">w</span><span class="p">.</span><span class="nf">Header</span><span class="p">().</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Access-Control-Allow-Credentials&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;true&#34;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><p><div class="not-prose">
 <figure>
     <img src="/cors/cors-5.png"
@@ -429,7 +425,7 @@ Create a Simple Web App with CORS Misconfiguration Essentially, we require a web
    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
    <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
 </svg>
-</i> 2024 - 2026 Yuchen Liu
+</i> 2024 - 2025 Yuchen Liu
     
   </div>
   
