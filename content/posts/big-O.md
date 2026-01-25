@@ -3,7 +3,7 @@ title = 'What is Good Code'
 date = 2025-10-08T23:14:09-04:00
 draft = false
 toc = false
-categories = ['Coding']
+categories = ['coding']
 tags = ['big O']
 series = ['DSA']
 +++
