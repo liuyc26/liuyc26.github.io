@@ -24,6 +24,8 @@
 
       {{ partial "block/time.html" . }}
 
+      {{ partial "block/views.html" . }}
+
       {{ if or .Params.Toc $.Site.Params.Toc }}
         {{ if ne .Params.Toc false }}
         <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
