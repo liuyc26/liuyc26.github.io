@@ -11,4 +11,4 @@ repo = 'https://github.com/liuyc26/SubMon'
 
 **What I built.** A dashboard where you add targets, run or schedule scans (subfinder, dnsx, httpx), and see which subdomains are new or missing since the last scan, with page titles. A background worker sends a Discord notification whenever new subdomains appear.
 
-**Result.** _[Add: what it found, how long you've run it, or what you learned]_
+**Result.** Four releases in six weeks (Feb to Mar 2026): a dashboard, then scheduled scans and page titles, then multithreaded scanning (up to 8 workers) so large targets finish much faster, and a one-command Docker Compose setup.

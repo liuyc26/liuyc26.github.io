@@ -11,4 +11,4 @@ repo = 'https://github.com/liuyc26/CrossHudson'
 
 **What I built.** An interactive map of 362 municipalities across 14 commuter counties, with a hover card showing census income, tax rates, school ratings and transit. Click a town and an AI agent (Google Agent Development Kit) streams a neighborhood profile over Server-Sent Events, backed by a FastAPI + SQLite data layer.
 
-**Result.** _[Add: demo link, who used it, or what you learned]_
+**Result.** A SQLite database of all 362 municipalities, each matched to its nearest transit station, built by merging New Jersey's property tax data with Sustainable Jersey community profiles. The agent answers through two focused tools (town stats and commute details) and ships with an evaluation dataset and end-to-end tests.
