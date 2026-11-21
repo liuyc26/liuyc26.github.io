@@ -1,6 +1,6 @@
 baseURL = "https://liuyuchen.dev/"
 languageCode = "en-us"
-title = "Y.Liu's Blog"
+title = "Yuchen Liu"
 author = "Yuchen"
 copyright = "Yuchen Liu"
 theme = "tailwind"
@@ -9,33 +9,67 @@ theme = "tailwind"
   _merge = "deep"
 
 [params]
-  subtitle = ""
+  subtitle = "Software Engineer"
   # dir name of your blog content (default is `content/posts`).
   # the list of set content will show up on your index page (baseurl).
   contentTypeName = "posts"
+
+  [params.profile]
+    name = "Yuchen Liu"
+    role = "Software Engineer · security & machine learning"
+    pitch = "[Placeholder] I build reliable backend systems and care about security. Previously in cybersecurity, now shipping software. Two sentences on what you do and who you help."
+    availability = "[Placeholder] Open to new roles and freelance work"
+    skills = ["[Placeholder]", "Python", "Go", "Web security", "Machine learning", "Cloud"]
+    email = "you@example.com"
+    contactNote = "[Placeholder] Hiring, or have a project in mind? I usually reply within a day."
+    # resume = "/resume.pdf"
 
   [params.header]
     logo = "coder.png"
 
   [params.footer]
     since = 2024
-    poweredby = true
+    poweredby = false
 
 [menu]
 
   [[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    pageRef = "/projects"
+    weight = 5
+
+  [[menu.main]]
     identifier = "post"
-    name = "Blogs"
+    name = "Blog"
     pageRef = "/posts"
     weight = 10
 
   [[menu.main]]
     identifier = "about"
-    name = "Whoami"
+    name = "About"
     pageRef = "/about"
     weight = 20
+
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/#contact"
+    weight = 30
 
 [taxonomies]
 category = "categories"
 tag = "tags"
 series = "series"
+
+[[params.social_media.items]]
+  enabled = true
+  title = "GitHub"
+  icon = "brand-github"
+  link = "https://github.com/liuyc26"
+
+[[params.social_media.items]]
+  enabled = true
+  title = "LinkedIn"
+  icon = "brand-linkedin"
+  link = "https://www.linkedin.com/in/PLACEHOLDER"

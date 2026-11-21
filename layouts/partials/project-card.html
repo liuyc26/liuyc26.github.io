@@ -1,0 +1,10 @@
+<article class="pf-card">
+  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <p>{{ .Description }}</p>
+  {{ with .Params.stack }}<ul class="pf-stack">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+  <div class="pf-links">
+    <a href="{{ .RelPermalink }}">Case study</a>
+    {{ with .Params.repo }}<a href="{{ . }}" target="_blank" rel="noopener">Code</a>{{ end }}
+    {{ with .Params.demo }}<a href="{{ . }}" target="_blank" rel="noopener">Live</a>{{ end }}
+  </div>
+</article>

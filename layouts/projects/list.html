@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="pf">
+  <section class="pf-section pf-first">
+    <h1 class="pf-h1">{{ .Title }}</h1>
+    {{ with .Content }}<div class="pf-lead">{{ . }}</div>{{ end }}
+    <div class="pf-grid">{{ range .Pages.ByWeight }}{{ partial "project-card.html" . }}{{ end }}</div>
+  </section>
+</div>
+{{ end }}

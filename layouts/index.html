@@ -1,0 +1,51 @@
+{{ define "main" }}
+{{ $p := site.Params.profile }}
+<div class="pf">
+  <section class="pf-hero">
+    {{ with $p.availability }}<p class="pf-badge"><span class="pf-dot"></span>{{ . }}</p>{{ end }}
+    <h1 class="pf-name">{{ $p.name }}</h1>
+    <p class="pf-role">{{ $p.role }}</p>
+    <p class="pf-pitch">{{ $p.pitch | markdownify }}</p>
+    <div class="pf-actions">
+      <a class="pf-btn pf-btn-primary" href="#contact">Get in touch</a>
+      <a class="pf-btn" href="{{ "projects/" | relURL }}">See my work</a>
+      {{ with $p.resume }}<a class="pf-btn" href="{{ . | relURL }}">Résumé</a>{{ end }}
+    </div>
+  </section>
+
+  {{ with $p.skills }}
+  <section class="pf-section">
+    <h2 class="pf-h2">What I work with</h2>
+    <ul class="pf-tags">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+  </section>
+  {{ end }}
+
+  {{ $projects := where site.RegularPages "Section" "projects" }}
+  {{ with $projects }}
+  <section class="pf-section">
+    <div class="pf-head"><h2 class="pf-h2">Selected projects</h2><a class="pf-more" href="{{ "projects/" | relURL }}">All projects →</a></div>
+    <div class="pf-grid">
+      {{ range first 4 (sort . "Weight") }}{{ partial "project-card.html" . }}{{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <section class="pf-section">
+    <div class="pf-head"><h2 class="pf-h2">Recent writing</h2><a class="pf-more" href="{{ "posts/" | relURL }}">All posts →</a></div>
+    <ul class="pf-posts">
+      {{ range first 4 (where site.RegularPages "Section" "posts") }}
+      <li><a href="{{ .RelPermalink }}"><span class="pf-post-title">{{ .Title }}</span><time>{{ .Date.Format "Jan 2006" }}</time></a></li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <section class="pf-section pf-contact" id="contact">
+    <h2 class="pf-h2">Let's work together</h2>
+    <p>{{ $p.contactNote }}</p>
+    <div class="pf-actions">
+      {{ with $p.email }}<a class="pf-btn pf-btn-primary" href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+      {{ range site.Params.social_media.items }}{{ if .enabled }}<a class="pf-btn" href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a>{{ end }}{{ end }}
+    </div>
+  </section>
+</div>
+{{ end }}
