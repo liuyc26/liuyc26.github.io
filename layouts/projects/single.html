@@ -10,7 +10,7 @@
       {{ with .Params.repo }}<a class="pf-btn" href="{{ . }}" target="_blank" rel="noopener">View code</a>{{ end }}
       {{ range .Params.links }}<a class="pf-btn" href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>{{ end }}
     </div>
-    {{ with .Resources.GetMatch "cover.*" }}<img class="pf-shot" src="{{ .RelPermalink }}" alt="{{ $.Title }} screenshot">{{ end }}
+    {{ with .Resources.GetMatch "cover.*" }}<img class="pf-shot" src="{{ .RelPermalink }}" alt="{{ $.Title }} screenshot">{{ else }}{{ with .Params.cover }}<img class="pf-shot" src="{{ . | relURL }}" alt="{{ $.Title }} screenshot">{{ end }}{{ end }}
     <div class="prose prose-slate dark:prose-invert prose-quoteless pf-prose">{{ .Content }}</div>
   </article>
 </div>
