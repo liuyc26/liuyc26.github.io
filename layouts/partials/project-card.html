@@ -1,10 +1,19 @@
 <article class="pf-card">
-  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-  <p>{{ .Description }}</p>
-  {{ with .Params.stack }}<ul class="pf-stack">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
-  <div class="pf-links">
-    <a href="{{ .RelPermalink }}">Case study</a>
-    {{ with .Params.repo }}<a href="{{ . }}" target="_blank" rel="noopener">Code</a>{{ end }}
-    {{ with .Params.demo }}<a href="{{ . }}" target="_blank" rel="noopener">Live</a>{{ end }}
+  {{ with .Resources.GetMatch "cover.*" }}
+    {{ $img := .Fill "800x420 TopLeft" }}
+    <a class="pf-cover" href="{{ $.RelPermalink }}"><img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $.Title }} screenshot" loading="lazy"></a>
+  {{ else }}
+    <a class="pf-cover pf-cover-text" href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1"><span>$ {{ .Params.cmd | default (path.Base (.Params.repo | default .File.Dir) | lower) }}</span></a>
+  {{ end }}
+  <div class="pf-card-body">
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p>{{ .Description }}</p>
+    {{ with .Params.stack }}<ul class="pf-stack">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+    <div class="pf-links">
+      {{ with .Params.demo }}<a href="{{ . }}" target="_blank" rel="noopener">Live demo ↗</a>{{ end }}
+      {{ with .Params.repo }}<a href="{{ . }}" target="_blank" rel="noopener">Code ↗</a>{{ end }}
+      {{ range .Params.links }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }} ↗</a>{{ end }}
+      <a href="{{ .RelPermalink }}">Details</a>
+    </div>
   </div>
 </article>

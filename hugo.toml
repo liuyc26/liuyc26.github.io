@@ -19,10 +19,16 @@ theme = "tailwind"
     role = "Software Engineer · security & machine learning"
     pitch = "[Placeholder] I build reliable backend systems and care about security. Previously in cybersecurity, now shipping software. Two sentences on what you do and who you help."
     availability = "[Placeholder] Open to new roles and freelance work"
-    skills = ["[Placeholder]", "Python", "Go", "Web security", "Machine learning", "Cloud"]
+    skills = ["Python", "FastAPI", "Go", "JavaScript", "React", "SQL", "Docker", "GitHub Actions", "Web security", "AI agents"]
     email = "you@example.com"
     contactNote = "[Placeholder] Hiring, or have a project in mind? I usually reply within a day."
     # resume = "/resume.pdf"
+
+  [params.github]
+    user = "liuyc26"
+    limit = 8
+    # repos to leave out of the "More on GitHub" list
+    hide = ["liuyc26", "liuyc26.github.io"]  # lowercase; archived repos and forks are hidden automatically
 
   [params.header]
     logo = "coder.png"

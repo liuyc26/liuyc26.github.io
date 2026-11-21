@@ -5,5 +5,9 @@
     {{ with .Content }}<div class="pf-lead">{{ . }}</div>{{ end }}
     <div class="pf-grid">{{ range .Pages.ByWeight }}{{ partial "project-card.html" . }}{{ end }}</div>
   </section>
+  <section class="pf-section">
+    <div class="pf-head"><h2 class="pf-h2">More on GitHub</h2><a class="pf-more" href="https://github.com/{{ site.Params.github.user }}" target="_blank" rel="noopener">github.com/{{ site.Params.github.user }} ↗</a></div>
+    {{ partial "github-repos.html" . }}
+  </section>
 </div>
 {{ end }}
