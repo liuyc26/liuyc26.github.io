@@ -5,7 +5,6 @@ weight = 4
 stack = ['Python', 'FastAPI', 'SQLModel', 'React', 'Docker']
 repo = 'https://github.com/liuyc26/SubMon'
 +++
-<!-- DRAFT from the README. Please check and add why you built it / any results. -->
 
 **Problem.** In bug bounty, being *first* to a new asset matters as much as finding the bug.
 

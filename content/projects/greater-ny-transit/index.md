@@ -6,7 +6,6 @@ stack = ['Python', 'FastAPI', 'Vercel', 'GitHub Actions', 'GTFS-realtime']
 repo = 'https://github.com/liuyc26/greater-ny-transit'
 demo = 'https://greater-ny-transit.vercel.app'
 +++
-<!-- DRAFT from the README. Please check and add why you built it / any results. -->
 
 **Problem.** Commuter rail and bus feeds from the MTA and NJ Transit are rough: LIRR positions are often minutes old and NJ Transit train positions jump kilometers at a time, so plotting raw positions gives a jittery, misleading map.
 

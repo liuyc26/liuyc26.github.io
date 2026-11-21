@@ -6,7 +6,6 @@ toc = false
 layout = 'about'
 description = 'Software engineer working on backend systems, platform engineering and security infrastructure.'
 +++
-<!-- DRAFT written from your career-change post and repos. Please check every line. -->
 
 I'm Yuchen, a software engineer specializing in backend systems, platform engineering and security infrastructure. I like taking a messy, complex problem, simplifying it, and turning it into a system that is easy to maintain.
 

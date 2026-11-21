@@ -5,7 +5,6 @@ weight = 2
 stack = ['Python', 'FastAPI', 'Google ADK', 'React', 'Leaflet', 'SQLite']
 repo = 'https://github.com/liuyc26/CrossHudson'
 +++
-<!-- DRAFT from the README. Please check and add why you built it / any results. -->
 
 **Problem.** Choosing a New Jersey town to live in while working in Manhattan means juggling commute times, school ratings, property taxes and demographics across hundreds of municipalities.
 

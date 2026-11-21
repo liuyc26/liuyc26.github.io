@@ -20,7 +20,6 @@ stack = ['Python', 'Networking', 'Protocols']
   name = 'AI coding agent'
   url = 'https://github.com/liuyc26/codecrafters-claude-code-python'
 +++
-<!-- DRAFT. Please check and add a line on what you learned. -->
 
 A series of CodeCrafters challenges where I rebuilt well-known tools from the protocol up:
 

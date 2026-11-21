@@ -5,7 +5,6 @@ weight = 3
 stack = ['Python', 'FastAPI', 'SQLAlchemy', 'PostgreSQL', 'Docker']
 repo = 'https://github.com/liuyc26/diffscan'
 +++
-<!-- DRAFT from the README. Please check and add why you built it / any results. -->
 
 **Problem.** API keys, tokens and private keys end up in git history, and once pushed they are hard to spot by hand.
 
