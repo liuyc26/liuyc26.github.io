@@ -6,22 +6,13 @@ toc = false
 layout = 'about'
 description = 'Software engineer working on backend systems, platform engineering and security infrastructure.'
 +++
-<!-- DRAFT written from your career-change post and repos. Please check every line, and fill in the [brackets]. -->
+<!-- DRAFT written from your career-change post and repos. Please check every line. -->
 
 I'm Yuchen, a software engineer specializing in backend systems, platform engineering and security infrastructure. I like taking a messy, complex problem, simplifying it, and turning it into a system that is easy to maintain.
 
-I started out in security. I studied Information Security in college, interned in web penetration testing and Active Directory security, and then came to the U.S. for graduate school. My first full-time role was as a cloud security operations engineer at [Company]. Finding problems was interesting, but I wanted to be the one fixing them, so I moved into a software engineering role in the same department.
+I started out in security. I studied Information Security in college, interned in web penetration testing and Active Directory security, and then came to the U.S. for graduate school. My first full-time role was as a cloud security operations engineer. Finding problems was interesting, but I wanted to be the one fixing them, so I moved into a software engineering role in the same department.
 
 That background shapes how I build: security isn't a separate team's job, it's part of the software development lifecycle. Today I write backend services and platform tooling, and I still read CVE source code and play HackTheBox for fun.
-
-## Experience
-
-- **Software Engineer** · [Company] · [2024 – present]  
-  [One line on what you build and the impact.]
-- **Cloud Security Operations Engineer** · [Company] · [years]  
-  [One line on what you did.]
-- **[Degree]** · [University] · [year]
-- **B.S. Information Security** · [University] · [year]
 
 ## What I work on
 

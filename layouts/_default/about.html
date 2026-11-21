@@ -7,18 +7,15 @@
       <p class="pf-about-name">{{ $p.name }}</p>
       <p class="pf-about-role">{{ $p.role }}</p>
       <div class="pf-about-links">
-        {{ with $p.email }}<a href="mailto:{{ . }}">Email</a>{{ end }}
-        {{ range site.Params.social_media.items }}{{ if .enabled }}<a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }} ↗</a>{{ end }}{{ end }}
+        <a href="#contact">Contact</a>
+        {{ range site.Params.social_media.items }}{{ if .enabled }}<a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a>{{ end }}{{ end }}
         {{ with $p.resume }}<a href="{{ . | relURL }}">Résumé</a>{{ end }}
       </div>
     </aside>
     <article>
       <h1 class="pf-h1">{{ .Title }}</h1>
       <div class="prose prose-slate dark:prose-invert prose-quoteless pf-prose">{{ .Content }}</div>
-      <div class="pf-actions">
-        <a class="pf-btn pf-btn-primary" href="{{ "contact/" | relURL }}">Get in touch</a>
-        <a class="pf-btn" href="{{ "projects/" | relURL }}">See my work</a>
-      </div>
+      {{ partial "contact-block.html" . }}
     </article>
   </div>
 </div>

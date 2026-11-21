@@ -7,7 +7,7 @@
     <p class="pf-role">{{ $p.role }}</p>
     <p class="pf-pitch">{{ $p.pitch | markdownify }}</p>
     <div class="pf-actions">
-      <a class="pf-btn pf-btn-primary" href="{{ "contact/" | relURL }}">Get in touch</a>
+      <a class="pf-btn pf-btn-primary" href="#contact">Get in touch</a>
       <a class="pf-btn" href="{{ "projects/" | relURL }}">See my work</a>
       {{ with $p.resume }}<a class="pf-btn" href="{{ . | relURL }}">Résumé</a>{{ end }}
     </div>

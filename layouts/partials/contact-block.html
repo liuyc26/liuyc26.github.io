@@ -1,0 +1,38 @@
+{{ $p := site.Params.profile }}
+<section class="pf-section pf-about-contact" id="contact">
+  <h2 class="pf-h2-lg">Get in touch</h2>
+  <p class="pf-lead">{{ $p.contactNote }} Email is the fastest way to reach me.</p>
+    <div class="pf-contact-grid">
+    {{ with $p.email }}
+    <div class="pf-card pf-contact-card">
+      <div class="pf-card-body">
+        <h2 class="pf-h2">Email</h2>
+        <p class="pf-contact-value">{{ . }}</p>
+        <div class="pf-actions">
+          <a class="pf-btn pf-btn-primary" href="mailto:{{ . }}?subject=Hello%20Yuchen">Send an email</a>
+          <button type="button" class="pf-btn" data-copy="{{ . }}">Copy address</button>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+    {{ range site.Params.social_media.items }}{{ if .enabled }}
+    <a class="pf-card pf-contact-card" href="{{ .link }}" target="_blank" rel="noopener">
+      <div class="pf-card-body">
+        <h2 class="pf-h2">{{ .title }}</h2>
+        <p class="pf-contact-value">{{ replaceRE "^https?://(www\\.)?" "" .link | strings.TrimSuffix "/" }}</p>
+        <span class="pf-more">Open {{ .title }}</span>
+      </div>
+    </a>
+    {{ end }}{{ end }}
+  </div>
+</section>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.textContent;
+    navigator.clipboard.writeText(b.dataset.copy).then(function () {
+      b.textContent = 'Copied!'; setTimeout(function () { b.textContent = t; }, 1500);
+    }, function () { window.location.href = 'mailto:' + b.dataset.copy; });
+  });
+});
+</script>

@@ -78,3 +78,6 @@
 button.pf-btn{cursor:pointer;color:var(--pf-text)}
 .pf-contact-tips{margin-top:2.5rem}
 .pf-contact-tips ul{margin-top:.75rem;list-style:disc;padding-left:1.25rem;color:var(--pf-muted);line-height:1.9}
+.pf-about-contact{margin-top:3rem;padding-bottom:0}
+.pf-h2-lg{font-size:1.75rem;font-weight:700;letter-spacing:-.02em}
+.pf-about-contact .pf-lead{margin:.75rem 0 1.5rem}

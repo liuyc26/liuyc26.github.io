@@ -57,11 +57,6 @@ theme = "tailwind"
     pageRef = "/about"
     weight = 20
 
-  [[menu.main]]
-    identifier = "contact"
-    name = "Contact"
-    pageRef = "/contact"
-    weight = 30
 
 [taxonomies]
 category = "categories"

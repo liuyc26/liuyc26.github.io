@@ -10,9 +10,9 @@
     <p>{{ .Description }}</p>
     {{ with .Params.stack }}<ul class="pf-stack">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
     <div class="pf-links">
-      {{ with .Params.demo }}<a href="{{ . }}" target="_blank" rel="noopener">Live demo ↗</a>{{ end }}
-      {{ with .Params.repo }}<a href="{{ . }}" target="_blank" rel="noopener">Code ↗</a>{{ end }}
-      {{ range .Params.links }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }} ↗</a>{{ end }}
+      {{ with .Params.demo }}<a href="{{ . }}" target="_blank" rel="noopener">Live demo</a>{{ end }}
+      {{ with .Params.repo }}<a href="{{ . }}" target="_blank" rel="noopener">Code</a>{{ end }}
+      {{ range .Params.links }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>{{ end }}
       <a href="{{ .RelPermalink }}">Details</a>
     </div>
   </div>
