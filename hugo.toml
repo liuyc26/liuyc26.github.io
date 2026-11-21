@@ -9,19 +9,19 @@ theme = "tailwind"
   _merge = "deep"
 
 [params]
-  subtitle = "Software Engineer"
+  subtitle = "Software Engineer | Backend, Platform & Security"
   # dir name of your blog content (default is `content/posts`).
   # the list of set content will show up on your index page (baseurl).
   contentTypeName = "posts"
 
   [params.profile]
     name = "Yuchen Liu"
-    role = "Software Engineer · security & machine learning"
-    pitch = "[Placeholder] I build reliable backend systems and care about security. Previously in cybersecurity, now shipping software. Two sentences on what you do and who you help."
-    availability = "[Placeholder] Open to new roles and freelance work"
+    role = "Software Engineer | Backend, Platform & Security"
+    pitch = "I’m a software engineer specializing in backend systems, platform engineering, and security infrastructure. I enjoy simplifying complex problems, designing maintainable systems, and building software that solves real-world problems."
+    # availability = "Open to new roles"  # optional badge above your name
     skills = ["Python", "FastAPI", "Go", "JavaScript", "React", "SQL", "Docker", "GitHub Actions", "Web security", "AI agents"]
-    email = "you@example.com"
-    contactNote = "[Placeholder] Hiring, or have a project in mind? I usually reply within a day."
+    email = "liuyc26@gmail.com"
+    contactNote = "Hiring, or have a project in mind? I’d love to hear about it."
     # resume = "/resume.pdf"
 
   [params.github]
@@ -78,4 +78,4 @@ series = "series"
   enabled = true
   title = "LinkedIn"
   icon = "brand-linkedin"
-  link = "https://www.linkedin.com/in/PLACEHOLDER"
+  link = "https://www.linkedin.com/in/yuchen-yc-liu/"
