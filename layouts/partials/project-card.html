@@ -1,7 +1,10 @@
 <article class="pf-card">
-  {{ with .Resources.GetMatch "cover.*" }}
-    {{ $img := .Fill "800x420 TopLeft" }}
-    <a class="pf-cover" href="{{ $.RelPermalink }}"><img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $.Title }} screenshot" loading="lazy"></a>
+  {{ $cover := .Resources.GetMatch "cover.*" }}
+  {{ if $cover }}
+    {{ $img := $cover.Fill "800x420 TopLeft" }}
+    <a class="pf-cover" href="{{ .RelPermalink }}"><img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ .Title }} screenshot" loading="lazy"></a>
+  {{ else if .Params.cover }}
+    <a class="pf-cover" href="{{ .RelPermalink }}"><img src="{{ .Params.cover | relURL }}" alt="{{ .Title }} screenshot" loading="lazy"></a>
   {{ else }}
     <a class="pf-cover pf-cover-text" href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1"><span>$ {{ .Params.cmd | default (path.Base (.Params.repo | default .File.Dir) | lower) }}</span></a>
   {{ end }}

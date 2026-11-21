@@ -44,7 +44,7 @@
 .pf-card{padding:0;overflow:hidden}
 .pf-card-body{display:flex;flex-direction:column;gap:.75rem;padding:1.5rem;flex:1}
 .pf-cover{display:block;border-bottom:1px solid var(--pf-line);background:var(--pf-chip)}
-.pf-cover img{display:block;width:100%;height:auto;aspect-ratio:800/420;object-fit:cover}
+.pf-cover img{display:block;width:100%;height:auto;aspect-ratio:800/420;object-fit:cover;object-position:left top}
 .pf-links{flex-wrap:wrap}
 .pf-repos{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,22rem),1fr));gap:.75rem}
 .pf-repos a{display:flex;flex-direction:column;gap:.35rem;height:100%;padding:1rem 1.25rem;border:1px solid var(--pf-line);border-radius:.6rem;background:var(--pf-card);transition:border-color .15s}

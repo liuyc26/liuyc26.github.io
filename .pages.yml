@@ -1,0 +1,161 @@
+# Page CMS configuration (https://pagescms.org/docs/configuration/)
+# Sign in at https://app.pagescms.org with GitHub to edit this site.
+# Saving in Page CMS commits to main, which triggers the normal deploy.
+
+media:
+  - name: images
+    label: Images
+    input: static/images
+    output: /images
+    categories: [image]
+    rename: safe
+
+content:
+  - name: posts
+    label: Blog posts
+    type: collection
+    path: content/posts
+    format: toml-frontmatter
+    delimiters: "+++"
+    filename: "{primary}.md"
+    view:
+      fields: [title, date, draft]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        options:
+          time: true
+          format: "yyyy-MM-dd'T'HH:mm:ssxxx"
+      - name: draft
+        label: Draft (hidden from the site)
+        type: boolean
+        default: true
+      - name: toc
+        label: Table of contents
+        type: boolean
+        default: false
+      - name: categories
+        label: Categories
+        type: string
+        list: true
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: series
+        label: Series
+        type: string
+        list: true
+      - name: body
+        label: Post
+        type: rich-text
+        options:
+          format: markdown
+          media: images
+
+  - name: projects
+    label: Projects
+    type: collection
+    path: content/projects
+    subfolders: true
+    exclude: [_index.md]
+    format: toml-frontmatter
+    delimiters: "+++"
+    filename: "{primary}/index.md"
+    view:
+      fields: [title, weight]
+      primary: title
+      default:
+        sort: weight
+        order: asc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: One-line description (shown on the card)
+        type: text
+      - name: weight
+        label: Order (1 shows first)
+        type: number
+      - name: stack
+        label: Tech stack
+        type: string
+        list: true
+      - name: repo
+        label: GitHub repo URL
+        type: string
+      - name: demo
+        label: Live demo URL
+        type: string
+      - name: cmd
+        label: Terminal text on the card when there is no cover image
+        type: string
+      - name: cover
+        label: Cover image (only needed if the folder has no cover.png)
+        type: image
+        options:
+          media: images
+      - name: links
+        label: Extra links
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Label
+            type: string
+          - name: url
+            label: URL
+            type: string
+      - name: body
+        label: Write-up
+        type: rich-text
+        options:
+          format: markdown
+          media: images
+
+  - name: about
+    label: About page
+    type: file
+    path: content/about.md
+    format: toml-frontmatter
+    delimiters: "+++"
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description (used for search engines)
+        type: text
+      - name: date
+        type: date
+        hidden: true
+        options:
+          time: true
+          format: "yyyy-MM-dd'T'HH:mm:ssxxx"
+      - name: draft
+        type: boolean
+        hidden: true
+      - name: toc
+        type: boolean
+        hidden: true
+      - name: layout
+        type: string
+        hidden: true
+      - name: body
+        label: Page
+        type: rich-text
+        options:
+          format: markdown
+          media: images
