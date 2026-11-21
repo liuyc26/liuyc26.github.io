@@ -12,7 +12,7 @@ I'm Yuchen, a software engineer specializing in backend systems, platform engine
 
 I started out in security. I studied Information Security in college, interned in web penetration testing and Active Directory security, and then came to the U.S. for graduate school. My first full-time role was as a cloud security operations engineer. Finding problems was interesting, but I wanted to be the one fixing them, so I moved into a software engineering role in the same department.
 
-That background shapes how I build: security isn't a separate team's job, it's part of the software development lifecycle. Today I write backend services and platform tooling, and I still read CVE source code and play HackTheBox for fun.
+That background shapes how I build: security isn't a separate team's job, it's part of the software development lifecycle. Today I write backend services and platform tooling.
 
 ## What I work on
 
