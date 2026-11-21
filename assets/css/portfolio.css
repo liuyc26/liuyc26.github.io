@@ -61,3 +61,20 @@
 @keyframes pf-blink{50%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.pf-cover-text span::after{animation:none}}
 .dark #navbar-menu .text-emerald-600{color:#34d399}
+.pf-about{display:grid;grid-template-columns:1fr;gap:2.5rem;padding:3rem 0 4rem}
+@media (min-width:768px){.pf-about{grid-template-columns:14rem 1fr;gap:3.5rem}.pf-about-side{position:sticky;top:2rem;align-self:start}}
+.pf-avatar{width:7rem;height:7rem;border-radius:50%;object-fit:cover;border:1px solid var(--pf-line)}
+.pf-about-name{font-weight:700;font-size:1.25rem;margin-top:1rem}
+.pf-about-role{color:var(--pf-muted);font-size:.9rem;margin-top:.25rem;line-height:1.5}
+.pf-about-links{display:flex;flex-direction:column;gap:.5rem;margin-top:1.25rem;font-size:.95rem}
+.pf-about-links a{color:var(--pf-accent)}
+.pf-about-links a:hover{text-decoration:underline}
+.pf-about .pf-prose{margin-top:1.5rem}
+.pf-contact-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+@media (min-width:640px){.pf-contact-grid{grid-template-columns:1fr 1fr}}
+.pf-contact-grid .pf-contact-card:first-child{grid-column:1/-1}
+.pf-contact-value{font-size:1.15rem;font-weight:500;color:var(--pf-text);word-break:break-all}
+.pf-contact-card .pf-actions{margin-top:.5rem}
+button.pf-btn{cursor:pointer;color:var(--pf-text)}
+.pf-contact-tips{margin-top:2.5rem}
+.pf-contact-tips ul{margin-top:.75rem;list-style:disc;padding-left:1.25rem;color:var(--pf-muted);line-height:1.9}

@@ -60,7 +60,7 @@ theme = "tailwind"
   [[menu.main]]
     identifier = "contact"
     name = "Contact"
-    url = "/#contact"
+    pageRef = "/contact"
     weight = 30
 
 [taxonomies]
