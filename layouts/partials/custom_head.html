@@ -1,0 +1,2 @@
+{{- $pf := resources.Get "css/portfolio.css" | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $pf.RelPermalink }}">

@@ -1,0 +1,30 @@
+{{/* Public repos from data/github_repos.json (refreshed by the deploy workflow).
+     Skips forks, archived repos, featured projects and repos listed in params.github.hide. */}}
+{{- $skip := site.Params.github.hide | default slice -}}
+{{- range where site.RegularPages "Section" "projects" -}}
+  {{- with .Params.repo }}{{ $skip = $skip | append (path.Base . | lower) }}{{ end -}}
+  {{- range .Params.links }}{{ $skip = $skip | append (path.Base .url | lower) }}{{ end -}}
+{{- end -}}
+{{- $repos := slice -}}
+{{- range site.Data.github_repos -}}
+  {{- if and (not .fork) (not .archived) (not (in $skip (lower .name))) -}}
+    {{- $repos = $repos | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- with $repos -}}
+<ul class="pf-repos">
+  {{- range first (site.Params.github.limit | default 8) (sort . "pushed_at" "desc") }}
+  <li>
+    <a href="{{ .html_url }}" target="_blank" rel="noopener">
+      <span class="pf-repo-name">{{ .name }}</span>
+      {{ with .description }}<span class="pf-repo-desc">{{ . }}</span>{{ end }}
+      <span class="pf-repo-meta">
+        {{ with .language }}<span>{{ . }}</span>{{ end }}
+        {{ with .stargazers_count }}<span>★ {{ . }}</span>{{ end }}
+        <span>Updated {{ (time .pushed_at).Format "Jan 2006" }}</span>
+      </span>
+    </a>
+  </li>
+  {{- end }}
+</ul>
+{{- end -}}

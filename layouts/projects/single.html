@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="pf">
+  <article class="pf-section pf-first pf-project">
+    <a class="pf-more" href="{{ "projects/" | relURL }}">← All projects</a>
+    <h1 class="pf-h1">{{ .Title }}</h1>
+    <p class="pf-lead">{{ .Description }}</p>
+    {{ with .Params.stack }}<ul class="pf-stack">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+    <div class="pf-actions">
+      {{ with .Params.demo }}<a class="pf-btn pf-btn-primary" href="{{ . }}" target="_blank" rel="noopener">Live demo</a>{{ end }}
+      {{ with .Params.repo }}<a class="pf-btn" href="{{ . }}" target="_blank" rel="noopener">View code</a>{{ end }}
+      {{ range .Params.links }}<a class="pf-btn" href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>{{ end }}
+    </div>
+    {{ with .Resources.GetMatch "cover.*" }}<img class="pf-shot" src="{{ .RelPermalink }}" alt="{{ $.Title }} screenshot">{{ end }}
+    <div class="prose prose-slate dark:prose-invert prose-quoteless pf-prose">{{ .Content }}</div>
+  </article>
+</div>
+{{ end }}

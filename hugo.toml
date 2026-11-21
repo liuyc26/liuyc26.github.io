@@ -1,6 +1,6 @@
 baseURL = "https://liuyuchen.dev/"
 languageCode = "en-us"
-title = "Y.Liu's Blog"
+title = "Yuchen Liu"
 author = "Yuchen"
 copyright = "Yuchen Liu"
 theme = "tailwind"
@@ -9,33 +9,68 @@ theme = "tailwind"
   _merge = "deep"
 
 [params]
-  subtitle = ""
+  subtitle = "Software Engineer | Backend, Platform & Security"
   # dir name of your blog content (default is `content/posts`).
   # the list of set content will show up on your index page (baseurl).
   contentTypeName = "posts"
+
+  [params.profile]
+    name = "Yuchen Liu"
+    role = "Software Engineer | Backend, Platform & Security"
+    pitch = "I’m a software engineer specializing in backend systems, platform engineering, and security infrastructure. I enjoy simplifying complex problems, designing maintainable systems, and building software that solves real-world problems."
+    # availability = "Open to new roles"  # optional badge above your name
+    skills = ["Python", "FastAPI", "Go", "JavaScript", "React", "SQL", "Docker", "GitHub Actions", "Web security", "AI agents"]
+    email = "liuyc26@gmail.com"
+    contactNote = "Hiring, or have a project in mind? I’d love to hear about it."
+    # resume = "/resume.pdf"
+
+  [params.github]
+    user = "liuyc26"
+    limit = 8
+    # repos to leave out of the "More on GitHub" list
+    hide = ["liuyc26", "liuyc26.github.io"]  # lowercase; archived repos and forks are hidden automatically
 
   [params.header]
     logo = "coder.png"
 
   [params.footer]
     since = 2024
-    poweredby = true
+    poweredby = false
 
 [menu]
 
   [[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    pageRef = "/projects"
+    weight = 5
+
+  [[menu.main]]
     identifier = "post"
-    name = "Blogs"
+    name = "Blog"
     pageRef = "/posts"
     weight = 10
 
   [[menu.main]]
     identifier = "about"
-    name = "Whoami"
+    name = "About"
     pageRef = "/about"
     weight = 20
+
 
 [taxonomies]
 category = "categories"
 tag = "tags"
 series = "series"
+
+[[params.social_media.items]]
+  enabled = true
+  title = "GitHub"
+  icon = "brand-github"
+  link = "https://github.com/liuyc26"
+
+[[params.social_media.items]]
+  enabled = true
+  title = "LinkedIn"
+  icon = "brand-linkedin"
+  link = "https://www.linkedin.com/in/yuchen-yc-liu/"
