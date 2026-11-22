@@ -1,2 +1,15 @@
+{{- /* Set the dark/light theme before the page paints. The theme only does this
+       in main.js at the end of <body>, so pages briefly showed in light mode
+       (a white flash) before switching to dark. */ -}}
+<script>
+  (function () {
+    try {
+      var t = localStorage.theme;
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    } catch (e) {}
+  })();
+</script>
 {{- $pf := resources.Get "css/portfolio.css" | minify | fingerprint -}}
 <link rel="stylesheet" href="{{ $pf.RelPermalink }}">
