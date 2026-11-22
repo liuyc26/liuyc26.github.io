@@ -1,6 +1,10 @@
 {{- /* Set the dark/light theme before the page paints. The theme only does this
        in main.js at the end of <body>, so pages briefly showed in light mode
-       (a white flash) before switching to dark. */ -}}
+       (a white flash) before switching to dark. The color-scheme meta and the
+       html background also stop browsers (Firefox, Safari) from drawing a white
+       blank page between navigations in dark mode. */ -}}
+<meta name="color-scheme" content="light dark">
+<style>html{background:#f8fafc;color-scheme:light}html.dark{background:#1f2937;color-scheme:dark}</style>
 <script>
   (function () {
     try {
