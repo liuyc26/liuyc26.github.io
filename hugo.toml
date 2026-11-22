@@ -31,7 +31,7 @@ theme = "tailwind"
     hide = ["liuyc26", "liuyc26.github.io"]  # lowercase; archived repos and forks are hidden automatically
 
   [params.header]
-    logo = "coder.png"
+    logo = "images/avatar.jpg"
 
   [params.footer]
     since = 2024
